@@ -168,29 +168,18 @@
                                 </select>
                             </div>
 
+                            <!-- 其他API使用的语速语调设置 -->
+                            <div id="rateContainer" class="form-group">
+                                <label for="rate">语速: <span id="rateValue">0</span></label>
+                                <input type="range" class="form-control-range" id="rate" name="rate" min="-100" max="100" value="0">
+                            </div>
 
-                            
-                    </div>
-                </div>
-            </div>
+                            <div id="pitchContainer" class="form-group">
+                                <label for="pitch">语调: <span id="pitchValue">0</span></label>
+                                <input type="range" class="form-control-range" id="pitch" name="pitch" min="-100" max="100" value="0">
+                            </div>
 
-            <!-- 历史记录容器 -->
-            <div class="col-12 col-md-8 col-lg-6 col-xl-5 mb-3">
-                <div class="card shadow-sm h-100">
-                    <div class="card-header text-center">
-                        <h2>历史记录</h2>
-                    </div>
-                    <!-- 语速语调设置 -->
-                        <div id="rateContainer" class="form-group">
-                            <label for="rate">语速: <span id="rateValue">0</span></label>
-                            <input type="range" class="form-control-range" id="rate" name="rate" min="-100" max="100" value="2">
-                        </div>
-
-                        <div id="pitchContainer" class="form-group">
-                            <label for="pitch">语调: <span id="pitchValue">0</span></label>
-                            <input type="range" class="form-control-range" id="pitch" name="pitch" min="-100" max="100" value="0">
-                        </div>
-                        <div id="error" class="alert alert-danger" style="display: none;"></div>
+                            <div id="error" class="alert alert-danger" style="display: none;"></div>
 
                             <button type="button" class="btn btn-info btn-block mb-3" id="previewButton">试听前20个字</button>
                             <button type="button" class="btn btn-primary btn-block" id="generateButton">生成语音</button>
@@ -204,10 +193,19 @@
                         <div class="mt-4 text-center" id="loading" style="display: none;">
                             <i class="fas fa-spinner fa-spin"></i> 正在生成语音，请稍候...
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 历史记录容器 -->
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5 mb-3">
+                <div class="card shadow-sm h-100">
+                    <div class="card-header text-center">
+                        <h2>历史记录</h2>
+                    </div>
+                    <div class="card-body history-container">
                         <button onclick="clearHistory()" class="btn btn-warning btn-block mb-3">清除历史</button>
                         <div id="historyItems"></div>
-                        <div class="card-body history-container">
-                        
                     </div>
                 </div>
             </div>
@@ -323,7 +321,7 @@
             </div>
         </div>
     </div>
-    <!--
+
     <footer class="text-center py-3 mt-3" style="background-color: #f8f9fa; font-size: 0.9rem;">
         <p class="mb-1">
             <a href="https://zwei.de.eu.org" target="_blank">Zwei</a> | 
@@ -334,7 +332,7 @@
             <a href="https://yxvm.com/aff.php?aff=819" target="_blank">YXVM</a> 赞助
         </p>
     </footer>
-    -->
+
     <!-- 在现有脚本引用前加入密码验证逻辑 -->
     <script>
         // 检查是否需要密码
